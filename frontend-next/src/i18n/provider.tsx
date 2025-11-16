@@ -6,20 +6,19 @@ import HttpBackend from 'i18next-http-backend'
 import { defaultLocale, languages } from './settings'
 
 if (!i18n.isInitialized) {
-  i18n
-    .use(HttpBackend)
-    .use(initReactI18next)
-    .init({
-      lng: defaultLocale,
-      fallbackLng: defaultLocale,
-      supportedLngs: languages,
-      ns: ['common'],
-      defaultNS: 'common',
-      backend: {
-        loadPath: '/locales/{{lng}}/{{ns}}.json',
-      },
-      interpolation: { escapeValue: false },
-    })
+  i18n.init({
+    lng: defaultLocale,
+    fallbackLng: defaultLocale,
+    supportedLngs: languages,
+    ns: ['common'],
+    defaultNS: 'common',
+    backend: {
+      loadPath: '/locales/{{lng}}/{{ns}}.json',
+    },
+    load: 'currentOnly',
+    interpolation: { escapeValue: false },
+  })
+
 }
 
 export function I18nProvider({

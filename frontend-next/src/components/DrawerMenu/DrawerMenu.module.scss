@@ -1,0 +1,64 @@
+.drawer-menu {
+  padding: 1rem;
+  background: var(--bg-card);
+  border-right: 1px solid var(--border);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.2rem;
+  }
+
+  &__title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary);
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  &__nav-item {
+    padding: 0.55rem 0.75rem;
+    border-radius: 0.5rem;
+    color: var(--text);
+    font-weight: 500;
+    transition: background 0.15s ease;
+
+    &:hover {
+      background: var(--primary-soft);
+      color: white;
+    }
+  }
+
+  &__footer {
+    margin-top: auto;
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* Кнопка открытия на мобилке */
+.drawer-menu-trigger {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  z-index: 50;
+  display: flex;
+  gap: 0.5rem;
+
+  /* отдельная кнопка */
+  &__button {
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(6px);
+    color: var(--primary);
+  }
+}

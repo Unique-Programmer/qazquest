@@ -1,0 +1,21 @@
+.button {
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+
+  &--primary {
+    background: var(--primary);
+    color: white;
+  }
+
+  &--outline {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+
+  &:hover {
+    opacity: .9;
+  }
+}

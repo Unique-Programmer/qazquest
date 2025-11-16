@@ -8,12 +8,8 @@ export default function proxy(req: NextRequest) {
   if (isLocalePath) return NextResponse.next()
 
   const cookieLang = req.cookies.get('lang')?.value
-
-  const isValidLang = (lang: string): lang is typeof languages[number] =>
-    languages.includes(lang as typeof languages[number])
-
-  const locale: typeof languages[number] =
-    cookieLang && isValidLang(cookieLang)
+  const locale =
+    cookieLang && languages.includes(cookieLang as any)
       ? cookieLang
       : defaultLocale
 

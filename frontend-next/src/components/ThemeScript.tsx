@@ -1,9 +1,11 @@
-export function ThemeScript({ defaultTheme }: { defaultTheme: string }) {
+export function ThemeScript() {
   const script = `
-    try {
-      const t = localStorage.getItem('theme') || '${defaultTheme}'
-      document.documentElement.dataset.theme = t
-    } catch (e) {}
+    (function(){
+      try {
+        var theme = localStorage.getItem('theme') || 'light';
+        document.documentElement.dataset.theme = theme;
+      } catch(e) {}
+    })()
   `
   return <script dangerouslySetInnerHTML={{ __html: script }} />
 }

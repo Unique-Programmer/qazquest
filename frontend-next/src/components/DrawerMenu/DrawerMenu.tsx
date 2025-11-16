@@ -1,32 +1,33 @@
 'use client'
 
 import { useState } from 'react'
-import { BaseLink } from '@/components/BaseLink'
+import styles from './DrawerMenu.module.scss'
+import { BaseLink } from '@/components/BaseLink/BaseLink'
 import { Drawer, IconButton, Button } from '@material-tailwind/react'
 import { Menu, X } from 'lucide-react'
-import { LanguageSwitch } from './LanguageSwitch'
+import { LanguageSwitch } from '../LanguageSwitch'
 
 export function DrawerMenu() {
   const [open, setOpen] = useState(false)
-  const toggleDrawer = () => setOpen(!open)
+  const toggleDrawer = () => setOpen((v) => !v)
 
   const menuItems = [
     { href: '/', label: '🏠 Главная' },
     { href: '/map', label: '🗺 Карта' },
     { href: '/profile', label: '👤 Профиль' },
     { href: '/login', label: '🔐 Войти' },
-    { href: '/about', label: '🔐 О сайте' },
+    { href: '/about', label: 'ℹ️ О сайте' },
   ]
 
   return (
     <>
-      {/* Кнопка меню */}
-      <div className="fixed left-4 top-4 z-50 flex items-center gap-2 md:hidden">
+      {/* Mobile trigger */}
+      <div className={styles['drawer-menu-trigger']}>
         <IconButton
           variant="text"
           size="lg"
           onClick={toggleDrawer}
-          className="text-primary bg-white/70 dark:bg-gray-900/70 backdrop-blur-md"
+          className={styles['drawer-menu-trigger__button']}
         >
           {open ? <X size={22} /> : <Menu size={22} />}
         </IconButton>
@@ -36,30 +37,30 @@ export function DrawerMenu() {
       <Drawer
         open={open}
         onClose={toggleDrawer}
-        className="p-4 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-700"
         placement="left"
+        className={styles['drawer-menu']}
       >
-        <div className="mb-4 flex items-center justify-between">
-          <h2 className="text-xl font-bold text-primary">KazQuest</h2>
+        <div className={styles['drawer-menu__header']}>
+          <h2 className={styles['drawer-menu__title']}>KazQuest</h2>
           <IconButton variant="text" onClick={toggleDrawer}>
             <X size={20} />
           </IconButton>
         </div>
 
-        <nav className="flex flex-col gap-2">
+        <nav className={styles['drawer-menu__nav']}>
           {menuItems.map((item) => (
             <BaseLink
               key={item.href}
               href={item.href}
               onClick={toggleDrawer}
-              className="px-3 py-2 rounded-md hover:bg-blue-100 dark:hover:bg-gray-800 text-gray-800 dark:text-gray-200 font-medium"
+              className={styles['drawer-menu__nav-item']}
             >
               {item.label}
             </BaseLink>
           ))}
         </nav>
 
-        <div className="mt-auto pt-6 flex justify-center">
+        <div className={styles['drawer-menu__footer']}>
           <Button
             size="sm"
             variant="gradient"
@@ -69,6 +70,7 @@ export function DrawerMenu() {
             В профиль
           </Button>
         </div>
+
         <LanguageSwitch />
       </Drawer>
     </>

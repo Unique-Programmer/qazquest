@@ -2,5 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "../styles/global.scss";
+
 /* Утилита на весь экран */
-html, body, :root { height: 100%; }
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+/* --- Гладкий рендеринг шрифтов --- */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

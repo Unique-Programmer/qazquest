@@ -1,0 +1,27 @@
+:root[data-theme="light"] {
+  /* Казахстан — светлая тема */
+  --bg: #F7F9FA;
+  --bg-card: #FFFFFF;
+  --text: #1E293B;
+  --text-secondary: #64748B;
+  --border: #E2E8F0;
+
+  /* Брендовые цвета */
+  --primary: #00ADEF;  /* флаговый голубой */
+  --primary-soft: #3BBFE5;
+  --gold: #FFD54F;
+}
+
+:root[data-theme="dark"] {
+  /* Казахстан — тёмная тема */
+  --bg: #0F172A;
+  --bg-card: #1E293B;
+  --text: #E2E8F0;
+  --text-secondary: #94A3B8;
+  --border: #334155;
+
+  /* Брендовые цвета */
+  --primary: #00ADEF;  /* остаётся ярким */
+  --primary-soft: #3BBFE5;
+  --gold: #FFD54F;
+}

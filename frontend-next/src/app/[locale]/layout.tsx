@@ -1,7 +1,7 @@
 import { use } from 'react'
 import { I18nProvider } from '@/i18n/provider'
 import { ThemeClient } from '@/components/ThemeClient'
-import { DrawerMenu } from '@/components/DrawerMenu'
+import { DrawerMenu } from '@/components/DrawerMenu/DrawerMenu'
 
 export async function generateStaticParams() {
   return [{ locale: 'ru' }, { locale: 'en' }, { locale: 'kz' }]
