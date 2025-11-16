@@ -1,10 +1,15 @@
 import { use } from 'react'
+import { BasePageProps } from '@/types/global'
+import { AppClientProviders } from '@/components/AppClientProviders'
 
 export default function LocalePage({
   params,
-}: {
-  params: Promise<{ locale: string }>
-}) {
+}: BasePageProps) {
   const { locale } = use(params)
-  return <div>Locale page content — {locale}</div>
+
+  return (
+    <AppClientProviders locale={locale}>
+      <div>Locale page content — {locale}</div>
+    </AppClientProviders>
+  )
 }

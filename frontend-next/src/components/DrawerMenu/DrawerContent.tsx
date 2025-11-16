@@ -7,8 +7,9 @@ import { useTranslation } from 'react-i18next'
 import styles from './DrawerMenu.module.scss'
 import { menuConfig } from './config'
 import { BaseLink } from '../BaseLink/BaseLink'
+import { LanguageSwitch } from '../LanguageSwitch/LanguageSwitch'
 
-export function MobileDrawer({
+export function DrawerContent({
   open,
   onClose
 }: {
@@ -24,14 +25,18 @@ export function MobileDrawer({
           {/* Backdrop */}
           <motion.div
             key="backdrop"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.35 }}
-            exit={{ opacity: 0 }}
-            className={styles.drawer__backdrop}
-            onClick={onClose}
+            {...{
+              initial: { opacity: 0 },
+              animate: { opacity: 0.35 },
+              exit: { opacity: 0 },
+              onClick: onClose,
+              className: styles.drawer__backdrop,
+            }}
           />
 
+
           {/* Drawer */}
+          {/* @ts-ignore */}
           <motion.div
             key="drawer"
             initial={{ x: -260 }}
@@ -48,17 +53,22 @@ export function MobileDrawer({
             </div>
 
             <nav className={styles.drawer__nav}>
-              {menuConfig.map(item => (
-                <BaseLink
-                  key={item.id}
-                  href={item.path}
-                  onClick={onClose}
-                  className={styles.drawer__navItem}
-                >
-                  {item.icon} {t(`menu.${item.id}`)}
-                </BaseLink>
-              ))}
+              {menuConfig.map(item => {
+                console.log('item', item);
+                return (
+                  <BaseLink
+                    key={item.id}
+                    href={item.path}
+                    onClick={onClose}
+                    className={styles.drawer__navItem}
+                  >
+                    {item.icon} {t(`menu.${item.id}`)}
+                  </BaseLink>
+                )
+              })}
             </nav>
+
+            <LanguageSwitch />
           </motion.div>
         </>
       )}
