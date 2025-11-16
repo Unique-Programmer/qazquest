@@ -1,1 +1,32 @@
-{ "home": "Home", "map": "Map", "profile": "Profile", "login": "Login", "welcome": "Sign in to unlock routes and achievements." }
+{
+  "menu": {
+    "title": "KazQuest",
+    "home": "Home",
+    "map": "Map",
+    "profile": "Profile",
+    "login": "Login",
+    "about": "About",
+    "toProfile": "Go to profile"
+  },
+
+  "layout": {
+    "themeLight": "Light",
+    "themeDark": "Dark"
+  },
+
+  "about": {
+    "title": "About KazQuest",
+    "welcome": "Welcome!",
+    "content": "KazQuest is an interactive map of Kazakhstan."
+  },
+
+  "profile": {
+    "title": "Profile",
+    "logout": "Logout"
+  },
+
+  "map": {
+    "title": "Kazakhstan map",
+    "loading": "Loading..."
+  }
+}

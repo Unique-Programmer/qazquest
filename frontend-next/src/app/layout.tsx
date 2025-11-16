@@ -17,7 +17,7 @@ export default async function RootLayout({
   return (
     <html data-theme={theme} lang="ru">
       <head>
-        <ThemeScript defaultTheme={theme} />
+        <ThemeScript />
       </head>
       <body>{children}</body>
     </html>
