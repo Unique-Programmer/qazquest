@@ -53,19 +53,17 @@ export function DrawerContent({
             </div>
 
             <nav className={styles.drawer__nav}>
-              {menuConfig.map(item => {
-                console.log('item', item);
-                return (
-                  <BaseLink
-                    key={item.id}
-                    href={item.path}
-                    onClick={onClose}
-                    className={styles.drawer__navItem}
-                  >
-                    {item.icon} {t(`menu.${item.id}`)}
-                  </BaseLink>
-                )
-              })}
+              {menuConfig.map(item => (
+                <BaseLink
+                  key={item.id}
+                  href={item.path}
+                  onClick={onClose}
+                  className={styles.drawer__navItem}
+                >
+                  {item.icon} {t(`menu.${item.id}`)}
+                </BaseLink>
+              )
+              )}
             </nav>
 
             <LanguageSwitch />

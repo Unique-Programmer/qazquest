@@ -5,21 +5,31 @@
 @import "../styles/global.scss";
 
 /* Утилита на весь экран */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-html, body {
+:root {
+  font-family: var(--font-ibm), sans-serif;
+}
+
+html,
+body {
   margin: 0;
   padding: 0;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
 /* --- Гладкий рендеринг шрифтов --- */
 body {
+  font-family: var(--font-ibm), sans-serif;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

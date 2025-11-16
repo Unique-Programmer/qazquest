@@ -1,9 +1,12 @@
 'use client'
 
 import { localizedPath } from '@/i18n/localizedPath'
+import clsx from 'clsx'
 import Link, { LinkProps } from 'next/link'
 import { usePathname } from 'next/navigation'
 import { ReactNode } from 'react'
+
+import styles from './BaseLink.module.scss';
 
 interface Props extends LinkProps {
   href: string
@@ -29,7 +32,7 @@ export function BaseLink({ href, children, className, onClick, ...rest }: Props)
   const url = localizedPath(href, locale)
 
   return (
-    <Link href={url} className={className} onClick={onClick} {...rest}>
+    <Link href={url} className={clsx(styles.baseLink, className)} onClick={onClick} {...rest}>
       {children}
     </Link>
   )
