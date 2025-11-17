@@ -13,7 +13,7 @@ export default function MapPage({ params }: BasePageProps) {
   return (
     <AppClientProviders locale={locale}>
       <div className="w-full h-[calc(100vh-64px)]">
-        <MapView />
+        <MapView /> { /* анимация не сработает из-за dynamic, нужна отдельная внутри */ }
       </div>
     </AppClientProviders>
   )

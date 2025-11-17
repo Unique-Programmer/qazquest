@@ -22,7 +22,8 @@
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "react-i18next": "^16.2.3",
-    "sass": "^1.94.0"
+    "sass": "^1.94.0",
+    "zustand": "^5.0.8"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.16",

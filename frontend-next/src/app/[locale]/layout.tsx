@@ -1,3 +1,4 @@
+import { TransitionOverlay } from '@/components/PageTransition/TransitionOverlay'
 import { ThemeClient } from '@/components/ThemeClient'
 
 export async function generateStaticParams() {
@@ -13,6 +14,7 @@ export default function LocaleLayout({
   return (
     <>
       <ThemeClient />
+      {/* <TransitionOverlay /> */}
       <main className="min-h-screen">{children}</main>
     </>
   )

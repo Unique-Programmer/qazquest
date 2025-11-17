@@ -1,0 +1,1 @@
+export const openingDuration = 0.2;
